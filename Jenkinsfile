@@ -33,12 +33,11 @@ pipeline {
     }
 	
 stage('publish'){
+	steps{
         nexusArtifactUploader artifacts: [[artifactId: 'Temporary', classifier: '', file: '/var/lib/jenkins/workspace/PizzaBotPipeline/target/Temporary-0.0.1-SNAPSHOT.war', type: 'war']], credentialsId: 'admin', groupId: 'com.cg', nexusUrl: '192.168.1.5:8081/', nexusVersion: 'nexus3', protocol: 'http', repository: 'Pipeline', version: '0.0.1'
+	}
        
-      
-   
-    
-}
+      }
 
   }
  
