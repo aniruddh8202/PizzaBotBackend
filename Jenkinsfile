@@ -1,11 +1,13 @@
-node {
+pipeline {
 
+    agent any
+    tools {
+        maven 'Maven' 
+    }
     stages {
         stage('Compile stage') {
-   
             steps {
-            	def mvnHome = tool name: 'Maven', type: 'maven'
-                sh "${mvnHome}/bin/mvn package" 
+                sh "mvn clean compile" 
         }
     }
 	stage("build & SonarQube analysis-----") {
