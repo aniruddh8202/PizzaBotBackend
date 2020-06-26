@@ -28,7 +28,7 @@ pipeline {
           stage('Install stage') {
               steps {
                 bat "mvn install"
-                archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true 
+                archiveArtifacts artifacts: '**/target/*.war', fingerprint: true 
         }
     }
 	
