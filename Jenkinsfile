@@ -7,27 +7,27 @@ pipeline {
     stages {
         stage('Compile stage') {
             steps {
-                sh "mvn clean compile" 
+                bat "mvn clean compile" 
         }
     }
 	stage("build & SonarQube analysis-----") {
             steps {
               withSonarQubeEnv('Sonar') {
-                sh 'mvn clean package sonar:sonar'
+                bat 'mvn clean package sonar:sonar'
               }
             }
 			}
 
          stage('testing stage') {
              steps {
-                sh "mvn test"
+                bat "mvn test"
                 junit allowEmptyResults: true, testResults:'**/target/*.xml' 
         }
     }
 
           stage('Install stage') {
               steps {
-                sh "mvn install"
+                bat "mvn install"
                 archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true 
         }
     }
