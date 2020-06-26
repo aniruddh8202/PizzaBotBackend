@@ -1,10 +1,10 @@
-pipeline {
+node {
 
-    
     stages {
         stage('Compile stage') {
-        	def mvnHome = tool name: 'Maven', type: 'maven'
+   
             steps {
+            	def mvnHome = tool name: 'Maven', type: 'maven'
                 sh "${mvnHome}/bin/mvn package" 
         }
     }
