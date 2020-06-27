@@ -91,7 +91,7 @@ stage("publish to nexus") {
 
 stage('deploy'){
 	steps{
-		bat "curl -v -u admin:admin -T C:/Users/Aniruddh/.jenkins/workspace/PizzaBotPipeline/target/Temporary-0.0.1-SNAPSHOT.war '192.168.1.5:1234//manager/text/deploy?path=/PipelinePizzaBot'"
+		bat "curl -v -u admin:115ea9ad930c5f847d28851d4a4acecb28 -T C:/Users/Aniruddh/.jenkins/workspace/PizzaBotPipeline/target/Temporary-0.0.1-SNAPSHOT.war 'https://192.168.1.5:1234//manager/text/deploy?path=/PipelinePizzaBot'"
 	}
 }
 
