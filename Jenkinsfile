@@ -9,7 +9,7 @@ pipeline {
     	NEXUS_PROTOCOL = "http"
     	NEXUS_URL = "localhost:8081"
     	NEXUS_REPOSITORY = "Pipeline"
-    	// NEXUS_CREDENTIALS_ID = "1cdb8165-4cef-40e3-9883-758c30c0b791"
+    	NEXUS_CREDENTIALS_ID = "1cdb8165-4cef-40e3-9883-758c30c0b791"
     }
     stages {
         stage('Compile stage') {
