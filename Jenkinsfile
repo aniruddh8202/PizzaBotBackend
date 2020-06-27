@@ -91,7 +91,7 @@ stage("publish to nexus") {
 
 stage('deploy'){
 	steps{
-		bat curl -T "Temporary-0.0.1-SNAPSHOT.war" "http://192.168.1.5:1234//manager/text/deploy?path=/Temporary-0.0.1-SNAPSHOT&update=true"
+		bat curl -T "Temporary-0.0.1-SNAPSHOT.war" "http://manager:manager@192.168.1.5:1234/manager/text/deploy?path=/Temporary-0.0.1-SNAPSHOT&update=true"
 	}
 }
 
